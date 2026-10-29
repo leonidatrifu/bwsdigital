@@ -1,0 +1,234 @@
+<title>Clearcoat Detailing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,500;125,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one narrow column, left-aligned; a single reflective "panel" in the hero, everything else plain rows divided by hairlines */
+:root {
+  --bg: #f3f4f5;
+  --surface: #e6e8ea;
+  --ink: #15181b;
+  --muted: #5d656d;
+  --line: #d2d6da;
+  --accent: #1f4e5f;
+  --sheen-a: #c9ced3;
+  --sheen-b: #fbfcfd;
+  --f-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1214; --surface: #181c1f; --ink: #e8ebed; --muted: #919aa2;
+    --line: #2a3035; --accent: #7fb6c9; --sheen-a: #1a1f23; --sheen-b: #4a535a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1214; --surface: #181c1f; --ink: #e8ebed; --muted: #919aa2;
+  --line: #2a3035; --accent: #7fb6c9; --sheen-a: #1a1f23; --sheen-b: #4a535a;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1rem/1.6 var(--f-body);
+  padding-inline: 20px;
+}
+.wrap { max-width: 960px; margin-inline: auto; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.label {
+  font: 400 0.75rem/1 var(--f-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Nav */
+nav {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding-block: 24px;
+}
+.brand { font: 700 1rem/1 var(--f-display); letter-spacing: 0.02em; text-decoration: none; }
+nav ul { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+nav ul a { text-decoration: none; color: var(--muted); font-size: 0.9rem; }
+nav ul a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding-block: 56px 40px; display: grid; gap: 40px; }
+h1 {
+  font: 500 clamp(2.2rem, 6vw, 4.2rem)/1.02 var(--f-display);
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 14ch;
+  text-wrap: balance;
+}
+.lede { margin: 0; max-width: 46ch; color: var(--muted); font-size: 1.1rem; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-block; padding: 14px 22px; text-decoration: none;
+  font: 500 0.95rem/1 var(--f-body); border-radius: 2px;
+  background: var(--ink); color: var(--bg);
+}
+.btn:hover { background: var(--accent); }
+.btn-quiet { background: transparent; color: var(--ink); border-bottom: 1px solid var(--line); border-radius: 0; padding-inline: 0; }
+.btn-quiet:hover { background: transparent; border-color: var(--ink); }
+
+.panel {
+  height: clamp(140px, 22vw, 220px);
+  max-width: 100%;
+  border-radius: 2px;
+  background: linear-gradient(100deg, var(--sheen-a) 0%, var(--sheen-a) 35%, var(--sheen-b) 48%, var(--sheen-a) 60%, var(--sheen-a) 100%);
+  background-size: 250% 100%;
+  animation: sheen 9s ease-in-out infinite alternate;
+}
+@keyframes sheen { from { background-position: 100% 0; } to { background-position: 0% 0; } }
+@media (prefers-reduced-motion: reduce) { .panel { animation: none; background-position: 50% 0; } }
+
+.specs {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px;
+  margin: 0; padding-top: 4px;
+}
+.specs div { display: grid; gap: 8px; }
+.specs dd { margin: 0; font: 500 1.4rem/1 var(--f-display); font-variant-numeric: tabular-nums; }
+
+/* Sections */
+section { padding-block: 72px; border-top: 1px solid var(--line); }
+h2 { font: 500 1.6rem/1.15 var(--f-display); margin: 0 0 8px; letter-spacing: -0.01em; text-wrap: balance; }
+.section-head { display: grid; gap: 12px; margin-bottom: 40px; }
+.section-head p { margin: 0; color: var(--muted); max-width: 52ch; }
+
+/* Services: rows, not cards */
+.services { list-style: none; margin: 0; padding: 0; }
+.services li {
+  display: grid; grid-template-columns: 1fr auto; gap: 8px 32px;
+  padding-block: 24px; border-bottom: 1px solid var(--line);
+}
+.services li:first-child { border-top: 1px solid var(--line); }
+.services h3 { margin: 0; font: 500 1.15rem/1.3 var(--f-body); }
+.services p { margin: 0; color: var(--muted); max-width: 52ch; grid-column: 1; }
+.services .price { font: 500 1.15rem/1.3 var(--f-display); font-variant-numeric: tabular-nums; text-align: right; }
+.services .time { grid-column: 2; text-align: right; }
+
+/* Process: a real sequence */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 32px; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; gap: 10px; align-content: start; }
+.steps li::before { content: "0" counter(step); font: 400 0.8rem/1 var(--f-mono); color: var(--accent); }
+.steps h3 { margin: 0; font: 500 1rem/1.3 var(--f-body); }
+.steps p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* Booking */
+.book { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: end; }
+.book h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0; max-width: 16ch; }
+.contact { display: grid; gap: 18px; margin: 0; }
+.contact div { display: grid; gap: 6px; }
+.contact dd { margin: 0; font-size: 1.05rem; user-select: all; }
+
+footer {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+  padding-block: 28px 40px; border-top: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+  nav ul { display: none; }
+  .hero { padding-block: 32px 24px; }
+  section { padding-block: 52px; }
+  .book { grid-template-columns: 1fr; }
+  .services li { grid-template-columns: 1fr; }
+  .services .price, .services .time { grid-column: 1; text-align: left; }
+}
+</style>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="brand" href="#top">CLEARCOAT</a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#book">Book</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div style="display:grid;gap:24px">
+      <span class="label">Mobile &amp; studio detailing · Portland, OR</span>
+      <h1>Paint, cared for properly.</h1>
+      <p class="lede">Hand washing, paint correction and ceramic coatings for daily drivers and weekend cars. We measure before we polish, and we never rush a cure.</p>
+      <div class="actions">
+        <a class="btn" href="#book">Book a detail</a>
+        <a class="btn btn-quiet" href="#services">See pricing</a>
+      </div>
+    </div>
+    <div class="panel" role="img" aria-label="Light moving across a polished paint panel"></div>
+    <dl class="specs">
+      <div><dt class="label">Cars detailed</dt><dd>2,400+</dd></div>
+      <div><dt class="label">Coating warranty</dt><dd>5 years</dd></div>
+      <div><dt class="label">Paint measured</dt><dd>Every panel</dd></div>
+      <div><dt class="label">Rating</dt><dd>4.9 / 5</dd></div>
+    </dl>
+  </header>
+
+  <section id="services" aria-labelledby="services-h">
+    <div class="section-head">
+      <span class="label">Services</span>
+      <h2 id="services-h">Three ways in</h2>
+      <p>Prices are for a sedan. SUVs and trucks add 20%. Every service starts with a two-bucket hand wash.</p>
+    </div>
+    <ul class="services">
+      <li>
+        <h3>Maintenance Wash</h3>
+        <span class="price">$85</span>
+        <p>Foam pre-wash, hand wash, wheels and tires, streak-free glass, interior vacuum and wipe-down.</p>
+        <span class="label time">~1.5 hrs</span>
+      </li>
+      <li>
+        <h3>Enhancement Detail</h3>
+        <span class="price">$340</span>
+        <p>Iron and clay decontamination, one-step polish to remove light swirls, and a sealant rated for 6 months.</p>
+        <span class="label time">~5 hrs</span>
+      </li>
+      <li>
+        <h3>Correction &amp; Ceramic</h3>
+        <span class="price">From $1,200</span>
+        <p>Paint depth readings on every panel, multi-stage correction, and a 9H ceramic coating with a 24-hour indoor cure.</p>
+        <span class="label time">2 days</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="process" aria-labelledby="process-h">
+    <div class="section-head">
+      <span class="label">Process</span>
+      <h2 id="process-h">How a correction goes</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Inspect</h3><p>We check every panel under LED light and log paint thickness in microns.</p></li>
+      <li><h3>Decontaminate</h3><p>Iron remover and clay bar lift what washing leaves behind.</p></li>
+      <li><h3>Correct</h3><p>Machine polishing removes swirls while staying within safe clear coat limits.</p></li>
+      <li><h3>Protect</h3><p>Coating goes on panel by panel, then cures overnight before you drive.</p></li>
+    </ol>
+  </section>
+
+  <section id="book" aria-labelledby="book-h">
+    <div class="book">
+      <div style="display:grid;gap:16px">
+        <span class="label">Book</span>
+        <h2 id="book-h">Most weeks we can fit you in within 5 days.</h2>
+      </div>
+      <dl class="contact">
+        <div><dt class="label">Call or text</dt><dd>(503) 555-0148</dd></div>
+        <div><dt class="label">Email</dt><dd>book@clearcoatdetail.com</dd></div>
+        <div><dt class="label">Hours</dt><dd>Tue–Sat, 8am–6pm</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <span class="label">© 2026 Clearcoat Detailing</span>
+    <span class="label">Fully insured · Water-reclaim equipped</span>
+  </footer>
+</div>
