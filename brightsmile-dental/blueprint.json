@@ -1,0 +1,23 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"steps": [
+		{
+			"step": "activatePlugin",
+			"pluginPath": "brightsmile-appointments/brightsmile-appointments.php"
+		},
+		{
+			"step": "activateTheme",
+			"themeFolderName": "brightsmile"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; brightsmile_install_demo_content();"
+		}
+	],
+	"login": true
+}

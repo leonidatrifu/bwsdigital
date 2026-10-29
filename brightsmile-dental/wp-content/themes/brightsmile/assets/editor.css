@@ -1,0 +1,3 @@
+/* Editor-only tweaks: keep cards still while editing. */
+.wp-block-group.is-style-card:hover { transform: none; }
+.bs-map iframe { pointer-events: none; }
