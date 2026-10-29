@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" fill="none" font-family="Helvetica, Arial, sans-serif">
+<defs>
+<linearGradient id="t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E4F4F2"/></linearGradient>
+<linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14A3A8"/><stop offset="1" stop-color="#0A5F63"/></linearGradient>
+<filter id="s" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#13293D" flood-opacity=".14"/></filter>
+</defs>
+<path d="M286 26c118 0 232 66 240 190 8 126-82 262-230 278C150 510 34 420 34 286S168 26 286 26z" fill="#CFEDEA"/>
+<circle cx="470" cy="96" r="44" fill="#FFE0D4"/>
+<circle cx="88" cy="210" r="16" fill="#FFFFFF" opacity=".9"/>
+<circle cx="500" cy="300" r="10" fill="#0E8388" opacity=".25"/>
+<g filter="url(#s)"><g transform="translate(286 236) scale(5.1) translate(-32 -32)"><path d="M20 10c-6 0-11 5-11 12 0 6 2 10 4 15 2 6 3 17 8 17 4 0 4-10 6-15 1-3 2-4 5-4s4 1 5 4c2 5 2 15 6 15 5 0 6-11 8-17 2-5 4-9 4-15 0-7-5-12-11-12-5 0-8 3-12 3s-7-3-12-3z" fill="url(#t)" stroke="#0E8388" stroke-width=".55"/></g></g>
+<path d="M196 150c-16 12-22 34-17 54" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+<circle cx="252" cy="214" r="9" fill="#13293D"/><circle cx="320" cy="214" r="9" fill="#13293D"/>
+<circle cx="255" cy="211" r="2.6" fill="#FFFFFF"/><circle cx="323" cy="211" r="2.6" fill="#FFFFFF"/>
+<path d="M262 244c12 16 36 16 48 0" stroke="#13293D" stroke-width="6" stroke-linecap="round"/>
+<circle cx="232" cy="240" r="11" fill="#FF8A65" opacity=".35"/><circle cx="340" cy="240" r="11" fill="#FF8A65" opacity=".35"/>
+<path d="M430 170l6 15 15 6-15 6-6 15-6-15-15-6 15-6z" fill="#0E8388"/>
+<path d="M150 112l4.5 11 11 4.5-11 4.5-4.5 11-4.5-11-11-4.5 11-4.5z" fill="#FF8A65"/>
+<path d="M420 320l3.5 8.5 8.5 3.5-8.5 3.5-3.5 8.5-3.5-8.5-8.5-3.5 8.5-3.5z" fill="#FFB49C"/>
+<g transform="translate(378 438) rotate(-32)">
+<rect x="-6" y="-12" width="190" height="24" rx="12" fill="url(#b)"/>
+<rect x="-70" y="-10" width="70" height="20" rx="9" fill="#0A5F63"/>
+<rect x="-66" y="-40" width="58" height="30" rx="6" fill="#FFFFFF" stroke="#BFE3E0" stroke-width="2"/>
+<path d="M-56 -38v26M-46 -38v26M-36 -38v26M-26 -38v26M-16 -38v26" stroke="#9FD6D2" stroke-width="2"/>
+<circle cx="160" cy="0" r="5" fill="#FFFFFF" opacity=".6"/>
+</g>
+<g filter="url(#s)">
+<rect x="34" y="58" width="196" height="64" rx="18" fill="#FFFFFF"/>
+<circle cx="70" cy="90" r="20" fill="#FFF1D6"/>
+<path d="M70 79l3.3 6.8 7.5 1.1-5.4 5.2 1.3 7.4-6.7-3.5-6.7 3.5 1.3-7.4-5.4-5.2 7.5-1.1z" fill="#F5A524"/>
+<text x="100" y="86" font-size="17" font-weight="700" fill="#13293D">4.9 rating</text>
+<text x="100" y="106" font-size="13" fill="#566778">1,200+ happy patients</text>
+</g>
+<g filter="url(#s)">
+<rect x="40" y="392" width="206" height="64" rx="18" fill="#FFFFFF"/>
+<circle cx="76" cy="424" r="20" fill="#0E8388"/>
+<path d="M67 424.5l6 6 11-12" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="106" y="420" font-size="17" font-weight="700" fill="#13293D">Pain-free care</text>
+<text x="106" y="440" font-size="13" fill="#566778">Gentle, modern methods</text>
+</g>
+</svg>

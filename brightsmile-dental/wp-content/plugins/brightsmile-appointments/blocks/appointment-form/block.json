@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "brightsmile/appointment-form",
+	"version": "1.0.0",
+	"title": "Appointment Form",
+	"category": "widgets",
+	"icon": "calendar-alt",
+	"description": "Lets patients request an appointment. Requests appear under Appointments in the dashboard.",
+	"keywords": [ "booking", "schedule", "dentist", "reservation" ],
+	"textdomain": "brightsmile-appointments",
+	"attributes": {
+		"services": {
+			"type": "string",
+			"default": "Check-up & cleaning\nTeeth whitening\nDental implants consultation\nClear aligners / orthodontics\nChildren's check-up\nRoot canal therapy\nCrowns, bridges & veneers\nEmergency visit\nOther / not sure"
+		},
+		"timeSlots": {
+			"type": "string",
+			"default": "08:00\n09:00\n10:00\n11:00\n12:00\n14:00\n15:00\n16:00\n17:00\n18:00"
+		},
+		"closedDays": {
+			"type": "array",
+			"default": [ 0 ]
+		},
+		"showNotes": { "type": "boolean", "default": true },
+		"buttonLabel": { "type": "string", "default": "Request appointment" },
+		"successMessage": {
+			"type": "string",
+			"default": "Your appointment request has been received. We will call or email you shortly to confirm the time."
+		},
+		"notificationEmail": { "type": "string", "default": "" },
+		"sendConfirmation": { "type": "boolean", "default": true }
+	},
+	"supports": {
+		"html": false,
+		"multiple": false,
+		"spacing": { "margin": true }
+	},
+	"editorScript": "file:./editor.js",
+	"style": "brightsmile-forms",
+	"render": "file:./render.php"
+}

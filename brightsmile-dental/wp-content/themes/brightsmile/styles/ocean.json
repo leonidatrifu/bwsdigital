@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Ocean Blue",
+	"settings": {
+		"color": {
+			"palette": [
+				{ "slug": "base", "name": "Base (white)", "color": "#FFFFFF" },
+				{ "slug": "base-2", "name": "Soft sky", "color": "#F2F7FC" },
+				{ "slug": "accent-soft", "name": "Sky", "color": "#DCEAFB" },
+				{ "slug": "primary", "name": "Primary (blue)", "color": "#1F6FD1" },
+				{ "slug": "primary-dark", "name": "Primary dark", "color": "#154F99" },
+				{ "slug": "accent", "name": "Accent (amber)", "color": "#F5A524" },
+				{ "slug": "contrast", "name": "Contrast (ink)", "color": "#111C2E" },
+				{ "slug": "contrast-2", "name": "Muted text", "color": "#58667A" },
+				{ "slug": "border", "name": "Border", "color": "#DDE6F1" }
+			],
+			"gradients": [
+				{ "slug": "hero", "name": "Hero sky", "gradient": "linear-gradient(135deg, #DCEAFB 0%, #F2F7FC 45%, #FFFFFF 100%)" },
+				{ "slug": "primary", "name": "Blue", "gradient": "linear-gradient(135deg, #1F6FD1 0%, #154F99 100%)" },
+				{ "slug": "navy", "name": "Ink", "gradient": "linear-gradient(160deg, #111C2E 0%, #0A1220 100%)" }
+			]
+		}
+	}
+}

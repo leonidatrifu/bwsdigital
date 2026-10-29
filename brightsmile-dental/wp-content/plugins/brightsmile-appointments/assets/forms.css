@@ -1,0 +1,72 @@
+/* BrightSmile form blocks — uses the active theme's colours when available. */
+.bs-form {
+	--bs-primary: var(--wp--preset--color--primary, #0E8388);
+	--bs-border: var(--wp--preset--color--border, #DCE8E7);
+	--bs-muted: var(--wp--preset--color--contrast-2, #566778);
+	--bs-soft: var(--wp--preset--color--base-2, #F1F8F7);
+	margin: 0;
+}
+.bs-form__grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem 1.25rem;
+}
+.bs-field { margin: 0; display: flex; flex-direction: column; gap: 0.4rem; min-width: 0; }
+.bs-field--full { grid-column: 1 / -1; }
+@media (max-width: 600px) {
+	.bs-form__grid { grid-template-columns: 1fr; }
+}
+.bs-field > label,
+.bs-field legend { font-weight: 600; font-size: 0.95rem; }
+.bs-req { color: var(--wp--preset--color--accent, #E4572E); }
+.bs-form input[type="text"],
+.bs-form input[type="email"],
+.bs-form input[type="tel"],
+.bs-form input[type="date"],
+.bs-form select,
+.bs-form textarea {
+	width: 100%;
+	box-sizing: border-box;
+	font: inherit;
+	font-size: 1rem;
+	color: inherit;
+	background: #fff;
+	border: 1.5px solid var(--bs-border);
+	border-radius: 12px;
+	padding: 0.8rem 0.95rem;
+	min-height: 3.1rem;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.bs-form textarea { min-height: 7rem; resize: vertical; }
+.bs-form input:focus,
+.bs-form select:focus,
+.bs-form textarea:focus {
+	outline: none;
+	border-color: var(--bs-primary);
+	box-shadow: 0 0 0 4px color-mix(in srgb, var(--bs-primary) 18%, transparent);
+}
+.bs-choice { border: 0; padding: 0; margin: 0; flex-direction: row; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.bs-choice legend { margin-bottom: 0.5rem; padding: 0; width: 100%; }
+.bs-choice label { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 400; cursor: pointer; }
+.bs-choice input { width: 1.15rem; height: 1.15rem; accent-color: var(--bs-primary); margin: 0; }
+.bs-form__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem 1.5rem;
+	margin-top: 1.5rem;
+}
+.bs-form__footer button { cursor: pointer; border: 0; }
+.bs-form__note { margin: 0; font-size: 0.875rem; color: var(--bs-muted); flex: 1 1 16rem; }
+.bs-hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+.bs-notice {
+	border-radius: 14px;
+	padding: 1rem 1.25rem;
+	margin-bottom: 1.5rem;
+	line-height: 1.5;
+}
+.bs-notice ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+.bs-notice--success { background: #E3F6EE; color: #0D5B3E; border: 1px solid #B5E3CF; }
+.bs-notice--error { background: #FDECEA; color: #8A1F11; border: 1px solid #F5C2BB; }
+#bs-appointment-form,
+#bs-contact-form { scroll-margin-top: 140px; }
