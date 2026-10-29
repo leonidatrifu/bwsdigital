@@ -1,0 +1,11 @@
+---
+# cPanel Git deployment: copies the Clearcoat theme into the WordPress install.
+# If WordPress is not in public_html (for example an addon domain or a subfolder),
+# change WPROOT below to that folder.
+deployment:
+  tasks:
+    - export WPROOT=$HOME/public_html
+    - export DEPLOYPATH=$WPROOT/wp-content/themes/clearcoat
+    - /bin/test -d $WPROOT/wp-content/themes
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R clearcoat-detailing/wp-content/themes/clearcoat/. $DEPLOYPATH/
